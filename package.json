@@ -1,0 +1,12 @@
+{
+  "name": "wallpapers",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jorgev259/silentwalker_wallpapers",
+  "author": "jorgev259 <jorgev259@outlook.es>",
+  "license": "MIT",
+  "scripts": {
+    "sync": "rclone sync -v \"drive_gallery:SiLeNtWaLkEr Destiny Emblem Wallpapers\" images && node createThumbs && node createDiscord && npm run sync-git",
+    "sync-git": "git add -A && (git diff --staged --quiet || (git commit -m \"Update images\" && git push)) "
+  }
+}
